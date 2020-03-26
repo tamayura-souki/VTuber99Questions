@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>VTuberが分かる99の質問</title>
+  </head>
+
+  <body>
+    <div id="ask" v-if="seen">
+      <div id="question">
+        Q{{questionN+1}}. {{question}}
+      </div>
+
+      <input v-model="answer" placeholder="質問の答えを入力" onChange="input()"/>
+
+      <br />
+
+      <button v-if="canBack" onClick="back()">
+        前の質問
+      </button>
+      <button v-if="canNext" onClick="next()">
+        次の質問
+      </button>
+      <input type="button" value="結果" onClick="showResult()" />
+    </div>
+
+    <div id="result" v-if="seen">
+      <div id="result-id" v-for="(question, index) in questionList">
+        <div id="result-q">Q{{index+1}}. {{question}}</div>
+        <div id="answer">A{{index+1}}. {{answerList[index]}}</div>
+      </div>
+    </div>
+
+    <p>ページから離れるとデータが消去されます</p>
+
+    <!--開発バージョン-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="result.js"></script>
+    <script src="ask.js"></script>
+  </body>
+</html>
