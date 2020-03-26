@@ -42,6 +42,5 @@ function showResult() {
   if (window.confirm("回答を終了しますか？")) {
     result.seen = true;
     ask.seen = false;
-    console.log(result.answerList[0]);
   }
 }

@@ -7,32 +7,53 @@
   </head>
 
   <body>
-    <div id="ask" v-if="seen">
-      <div id="question">
-        Q{{questionN+1}}. {{question}}
+    <header><h1>VTuberが分かる99の質問</h1></header>
+
+    <div class="center">
+      <div id="ask" v-if="seen">
+        <div id="question">
+          Q{{questionN+1}}. {{question}}
+        </div>
+
+        <input
+          id="answer"
+          v-model="answer"
+          placeholder="質問の答えを入力"
+          onChange="input()"
+        />
+
+        <br />
+
+        <button onClick="next(true)">
+          前の質問
+        </button>
+        <button onClick="next(false)">
+          次の質問
+        </button>
+        <button id="result-button" onClick="showResult()">
+          結果
+        </button>
       </div>
 
-      <input v-model="answer" placeholder="質問の答えを入力" onChange="input()"/>
+      <div id="result" v-if="seen">
+        <div id="result-id" v-for="(question, index) in questionList">
+          <div id="result-q">Q{{index+1}}. {{question}}</div>
+          <div id="answer">A{{index+1}}. {{answerList[index]}}</div>
+        </div>
+      </div>
 
-      <br />
-
-      <button v-if="canBack" onClick="next(true)">
-        前の質問
-      </button>
-      <button v-if="canNext" onClick="next(false)">
-        次の質問
-      </button>
-      <input type="button" value="結果" onClick="showResult()" />
-    </div>
-
-    <div id="result" v-if="seen">
-      <div id="result-id" v-for="(question, index) in questionList">
-        <div id="result-q">Q{{index+1}}. {{question}}</div>
-        <div id="answer">A{{index+1}}. {{answerList[index]}}</div>
+      <div id="note">
+        <p>ページから離れると何も残りません</p>
+        <p>結果から、回答をコピペできます</p>
       </div>
     </div>
 
-    <p>ページから離れるとデータが消去されます</p>
+    <footer>
+      <h2>
+        製作者:珠響そうき
+        <br />
+      </h2>
+    </footer>
 
     <!--開発バージョン-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
