@@ -16,10 +16,10 @@
 
       <br />
 
-      <button v-if="canBack" onClick="back()">
+      <button v-if="canBack" onClick="next(true)">
         前の質問
       </button>
-      <button v-if="canNext" onClick="next()">
+      <button v-if="canNext" onClick="next(false)">
         次の質問
       </button>
       <input type="button" value="結果" onClick="showResult()" />
