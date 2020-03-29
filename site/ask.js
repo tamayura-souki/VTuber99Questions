@@ -11,12 +11,9 @@ var askVue = new Vue({
 });
 
 const body_tag = document.querySelector("body");
-body_tag.onkeydown = enter;
+body_tag.onkeydown = keyDown;
 
-const input_tag = document.querySelector("input");
-input_tag.onkeydown = enter;
-
-function enter(e) {
+function keyDown(e) {
   switch (e.keyCode) {
     case 13: case 39: case 40:
     next(false);
@@ -34,6 +31,7 @@ function input() {
 }
 
 function next(isRev) {
+  input();
   var step = isRev ? -1 : 1;
   if (questionList[ask.questionN + step]) {
     ask.questionN += step;
