@@ -14,10 +14,10 @@ xhr.onerror = () => {
 xhr.send();
 
 questionList = data.split("\n");
-questionList = questionList.filter(x => x);
 questionList = questionList.map((value, i, array) => {
   return value.replace("- ", "");
 });
+questionList = questionList.filter(x => x.length > 1);
 
 // なんでもいいから初期化してみる
 answerList = Array(questionList.length);
