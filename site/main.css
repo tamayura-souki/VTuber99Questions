@@ -6,7 +6,7 @@ header h1 {
   font-family: serif;
 }
 
-footer * {
+footer {
   margin: auto;
   color: royalblue;
   font-weight: 200;
@@ -15,8 +15,8 @@ footer * {
   text-align: right;
 
   position: absolute;
-  right: 5px;
   bottom: 5px;
+  right: 5px;
 }
 
 body {
