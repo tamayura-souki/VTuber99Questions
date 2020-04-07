@@ -5,4 +5,4 @@ VTuberを分かるための99個の質問
 ただし、データの保存なんてしないので、ページを移動すると消えます。  
 回答がまとめて表示されるページで、コピペしてください。
 
-https://eteeeeeerminal.github.io/VTuber99Questions/site/
+https://tamayura-souki.github.io/VTuber99Questions/site/
